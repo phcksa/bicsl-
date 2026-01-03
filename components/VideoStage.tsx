@@ -46,16 +46,15 @@ const VideoStage: React.FC<Props> = ({ onComplete, onBack }) => {
       </header>
 
       <div className="bg-black rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 aspect-video relative group border-4 border-white">
-        <video 
+<video 
           ref={videoRef}
-          src="https://player.vimeo.com/external/494252666.sd.mp4?s=721607302d0cf314641d8e7b99c0da27520e03e5&profile_id=165&oauth2_token_id=57447761"
-          className="w-full h-full"
+          src="/videos/bicsl.mp4" 
+          className="w-full h-full object-cover"
           onTimeUpdate={handleTimeUpdate}
           onEnded={handleEnded}
-          controlsList="nodownload noplaybackrate"
-          disablePictureInPicture
-        />
-        
+          playsInline
+          controls={false}
+        />        
         {/* Progress Bar Overlay */}
         <div className="absolute bottom-0 left-0 right-0 h-2 bg-white/20">
           <div className="h-full bg-teal-500 transition-all duration-300" style={{ width: `${progress}%` }}></div>
